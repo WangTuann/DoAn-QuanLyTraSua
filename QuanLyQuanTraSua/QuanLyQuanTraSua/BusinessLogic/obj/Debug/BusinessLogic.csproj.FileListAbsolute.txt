@@ -8,3 +8,13 @@ D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLo
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.dll
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.pdb
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\bin\Debug\Guna.UI2.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\bin\Debug\DataAccess.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\bin\Debug\Guna.UI2.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\bin\Debug\DataAccess.pdb
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\BusinessLogic\obj\Debug\BusinessLogic.pdb

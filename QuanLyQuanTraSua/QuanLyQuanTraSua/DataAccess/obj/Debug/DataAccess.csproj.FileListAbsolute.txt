@@ -6,3 +6,11 @@ D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.pd
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\Guna.UI2.dll
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\Guna.UI2.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Kin\Desktop\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.pdb

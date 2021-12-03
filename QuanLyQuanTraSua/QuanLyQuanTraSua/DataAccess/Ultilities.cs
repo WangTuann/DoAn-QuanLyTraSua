@@ -18,5 +18,8 @@ namespace DataAccess
 
         public static string NuocUong_GetAll = "NuocUong_GetAll";
         public static string NuocUong_InsertUpdateDelete = "NuocUong_InsertUpdateDelete";
+
+        public static string NhanVien_GetAll = "NhanVien_GetAll";
+        public static string NhanVien_InsertUpdate = "NhanVien_InsertUpdate";
     }
 }
