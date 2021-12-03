@@ -262,8 +262,6 @@ namespace Quản_lý_quán_trà_sữa
             txtThemLoai.Visible = true;
             btnDongYLoai.Visible = true;
         }
-        #endregion
-
         private void btnDongYLoai_Click(object sender, EventArgs e)
         {
             int result = InsertLoaiNuoc();
@@ -271,7 +269,7 @@ namespace Quản_lý_quán_trà_sữa
             {
                 MessageBox.Show("Đã thêm dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadLoaiNuoc();
-                txtThemLoai.Visible=false;
+                txtThemLoai.Visible = false;
                 btnDongYLoai.Visible = false;
             }
             else
@@ -279,5 +277,8 @@ namespace Quản_lý_quán_trà_sữa
                 MessageBox.Show("Thêm dữ liệu không thành công. Vui lòng kiểm tra lại dữ liệu nhập", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
+
+
     }
 }

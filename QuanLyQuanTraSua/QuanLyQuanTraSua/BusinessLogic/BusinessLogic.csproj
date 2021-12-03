@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoaiNuocBL.cs" />
+    <Compile Include="NhanVienBL.cs" />
     <Compile Include="NuocUongBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoanBL.cs" />

@@ -49,6 +49,8 @@
     <Compile Include="ChucVuDA.cs" />
     <Compile Include="LoaiNuocDA.cs" />
     <Compile Include="LoaiNuoc.cs" />
+    <Compile Include="NhanVien.cs" />
+    <Compile Include="NhanVienDA.cs" />
     <Compile Include="NuocUong.cs" />
     <Compile Include="NuocUongDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

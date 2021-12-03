@@ -5,6 +5,18 @@ USE [QUANLYTRASUA]
 GO
 
 --TẠO CÁC BẢNG
+CREATE TABLE TaiKhoan
+(
+	TenTaiKhoan		NVARCHAR(100) PRIMARY KEY,
+	MatKhau			NVARCHAR(100) NOT NULL,
+	HoTen			NVARCHAR (1000) NOT NULL,
+	Email			NVARCHAR (100),
+	SoDienThoai		NVARCHAR (100) NOT NULL,
+	NgayTao			SMALLDATETIME NOT NULL,
+	TrangThai		BIT NOT NULL,
+	MaCV			INT REFERENCES ChucVu(MaCV)
+)
+
 CREATE TABLE ChucVu
 (
 	MaCV			INT IDENTITY (1,1) PRIMARY KEY,
@@ -12,24 +24,15 @@ CREATE TABLE ChucVu
 	GhiChu			NVARCHAR(1000)
 )
 
-CREATE TABLE TaiKhoan
-(
-	TenDangNhap		NVARCHAR(100) PRIMARY KEY,
-	MatKhau			NVARCHAR(100) NOT NULL,
-	HoTen			NVARCHAR (1000) NOT NULL,
-	TrangThai		BIT NOT NULL,
-	NgayTao			SMALLDATETIME NOT NULL,
-	ChucVu			INT REFERENCES ChucVu(MaCV)	
-)
-
 CREATE TABLE NhanVien
 (
 	MaNV			NVARCHAR(20) PRIMARY KEY,
 	HoTen			NVARCHAR(100) NOT NULL,
-	GioiTinh		NVARCHAR(10) CHECK(GioiTinh = N'Nam' OR GioiTinh = N'Nữ'),
 	DiaChi			NVARCHAR(50),
+	GioiTinh		NVARCHAR(10) CHECK(GioiTinh = N'Nam' OR GioiTinh = N'Nữ'),
 	NgaySinh		DATETIME NOT NULL,
-	SoDienThoai		NVARCHAR(100) NOT NULL
+	SoDienThoai		NVARCHAR(100) NOT NULL,
+	TenTaiKhoan		NVARCHAR(100) REFERENCES TaiKhoan(TenTaiKhoan)
 )
 
 CREATE TABLE Ban
@@ -49,7 +52,15 @@ CREATE TABLE HoaDon
 	Thue			FLOAT NOT NULL,
 	TrangThaiHD		INT NOT NULL,
 	NgayTao			DATETIME NOT NULL,
-	TaiKhoanTao		NVARCHAR(100) REFERENCES TaiKhoan(TenDangNhap)
+	TaiKhoanTao		NVARCHAR(100) REFERENCES TaiKhoan(TenTaiKhoan)
+)
+
+CREATE TABLE ChiTietHoaDon
+(
+	MaChiTietHoaDon	INT IDENTITY (1,1) PRIMARY KEY,
+	MaHoaDon		INT REFERENCES HoaDon(MaHoaDon),
+	MaNuocUong		INT REFERENCES NuocUong(MaNuocUong),
+	SoLuong			INT
 )
 
 CREATE TABLE LoaiNuoc
@@ -67,46 +78,33 @@ CREATE TABLE NuocUong
 		DonViTinh		NVARCHAR(100) NOT NULL
 )
 
-CREATE TABLE ChiTietHoaDon
-(
-	MaChiTietHoaDon	INT IDENTITY (1,1) PRIMARY KEY,
-	MaHoaDon		INT REFERENCES HoaDon(MaHoaDon),
-	MaNuocUong		INT REFERENCES NuocUong (MaNuocUong),
-	SoLuong			INT
-)
-
-
-
 --Thêm dữ liệu
+SET DATEFORMAT dmy
+INSERT [TaiKhoan] ([TenTaiKhoan], [MatKhau], [HoTen], [Email], [SoDienThoai], [NgayTao], [TrangThai],[MaCV]) VALUES (N'gominn',		N'gominn',		N'Nguyễn Việt Duy Danh',	N'duydanh16042019@gmail.com',	'0917291154', '20/11/2021',1,1)
+INSERT [TaiKhoan] ([TenTaiKhoan], [MatKhau], [HoTen], [Email], [SoDienThoai], [NgayTao], [TrangThai],[MaCV]) VALUES (N'qngtuann',	N'qngtuann',	N'Trương Quang Tuấn',		N'quangtuan2402@gmail.com',		'0334502288', '20/11/2021',1,2)
+INSERT [TaiKhoan] ([TenTaiKhoan], [MatKhau], [HoTen], [Email], [SoDienThoai], [NgayTao], [TrangThai],[MaCV]) VALUES (N'qngbao',		N'qngbao',		N'Nguyễn Trần Quang Bảo',	N'quangbao@gmail.com',			'0987654321', '20/11/2021',0,3)
+
 SET IDENTITY_INSERT [ChucVu] ON 
 INSERT [ChucVu]	([MaCV], [TenChucVu], [GhiChu])	VALUES	(1, N'Quản lý',				NULL)
 INSERT [ChucVu]	([MaCV], [TenChucVu], [GhiChu])	VALUES	(2, N'Nhân viên phục vụ',	NULL)
 INSERT [ChucVu]	([MaCV], [TenChucVu], [GhiChu])	VALUES	(3, N'Nhân viên pha chế',	NULL)
 
+INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai], [TenTaiKhoan]) VALUES (1,	N'Nguyễn Việt Duy Danh',	'Nam',	N'Đà Lạt',	'21/12/2001', '0917291154',	'gominn')
+INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai], [TenTaiKhoan]) VALUES (2,	N'Nguyễn Trần Quang Bảo',	'Nam',	N'Đà Lạt',	'03/10/2001', '0987654321',	'qngbao')
+INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai], [TenTaiKhoan]) VALUES (3,	N'Nguyễn Việt Duy Danh',	'Nam',	N'Đà Lạt',	'21/12/2001', '0917291154',	'gominn')
+INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai], [TenTaiKhoan]) VALUES (4,	N'Trương Quang Tuấn',		'Nam',	N'Đà Lạt',	'24/02/2001', '0334502288',	'qngtuann')
+INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai], [TenTaiKhoan]) VALUES (5,	N'Nguyễn Trần Quang Bảo',	'Nam',	N'Đà Lạt',	'03/10/2001', '0987654321',	'qngbao')
 
-SET DATEFORMAT dmy
-INSERT [TaiKhoan] ([TenDangNhap], [MatKhau], [HoTen], [TrangThai], [NgayTao], [ChucVu]) VALUES (N'gominn',		N'gominn',		N'Nguyễn Việt Duy Danh',	1,	 '20/11/2021', 2)
-INSERT [TaiKhoan] ([TenDangNhap], [MatKhau], [HoTen], [TrangThai], [NgayTao], [ChucVu]) VALUES (N'qngtuann',	N'qngtuann',	N'Trương Quang Tuấn',		0,	 '20/11/2021', 1)
-INSERT [TaiKhoan] ([TenDangNhap], [MatKhau], [HoTen], [TrangThai], [NgayTao], [ChucVu]) VALUES (N'qngbao',		N'qngbao',		N'Nguyễn Trần Quang Bảo',	1,	 '20/11/2021', 3)
-
-
-
-INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai]) VALUES (1,	N'Nguyễn Việt Duy Danh',	'Nam',	N'Đà Lạt',	'21/12/2001', '0917291154')
-INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai]) VALUES (2,	N'Nguyễn Trần Quang Bảo',	'Nam',	N'Đà Lạt',	'03/10/2001', '0987654321')
-INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai]) VALUES (3,	N'Nguyễn Việt Duy Danh',	'Nam',	N'Đà Lạt',	'21/12/2001', '0917291154')
-INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai]) VALUES (4,	N'Trương Quang Tuấn',		'Nam',	N'Đà Lạt',	'24/02/2001', '0334502288')
-INSERT [NhanVien] ([MaNV], [HoTen], [GioiTinh], [DiaChi], [NgaySinh], [SoDienThoai]) VALUES (5,	N'Nguyễn Trần Quang Bảo',	'Nam',	N'Đà Lạt',	'03/10/2001', '0987654321')
-
-DECLARE @i INT = 0
-WHILE @i <=10
-BEGIN 
-	INSERT Ban (TenBan, TrangThaiBan) VALUES (N'Bàn' + CAST (@i AS nvarchar(100)), 0)
-	SET @i = @i + 1
-END
-GO
-
-SET DATEFORMAT dmy
 SET IDENTITY_INSERT [ChucVu] OFF
+SET IDENTITY_INSERT [Ban] ON 
+INSERT [Ban] ([MaBan], [TenBan], [TrangThaiBan]) VALUES (1, N'01', 0)
+INSERT [Ban] ([MaBan], [TenBan], [TrangThaiBan]) VALUES (2, N'02', 0)
+INSERT [Ban] ([MaBan], [TenBan], [TrangThaiBan]) VALUES (3, N'03', 0)
+INSERT [Ban] ([MaBan], [TenBan], [TrangThaiBan]) VALUES (4, N'04', 0)
+INSERT [Ban] ([MaBan], [TenBan], [TrangThaiBan]) VALUES (5, N'05', 0)
+
+SET DATEFORMAT dmy
+SET IDENTITY_INSERT [Ban] OFF
 SET IDENTITY_INSERT [HoaDon] ON 
 INSERT [HoaDon] ([MaHoaDon], [TenHoaDon], [MaBan], [TongTien], [GiamGia], [Thue], [TrangThaiHD], [NgayTao], [TaiKhoanTao]) VALUES (1, N'Hóa đơn thanh toán', 1, 150000, 0.05, 0.1, 1, '20/11/2021', 'gominn')
 INSERT [HoaDon] ([MaHoaDon], [TenHoaDon], [MaBan], [TongTien], [GiamGia], [Thue], [TrangThaiHD], [NgayTao], [TaiKhoanTao]) VALUES (2, N'Hóa đơn thanh toán', 1, 300000, 0.05, 0.1, 1, '20/11/2021', 'gominn')
@@ -122,6 +120,12 @@ INSERT [LoaiNuoc] ([MaLoai], [TenLoai]) VALUES (2,N'Sữa tươi')
 INSERT [LoaiNuoc] ([MaLoai], [TenLoai]) VALUES (3,N'Trà')
 INSERT [LoaiNuoc] ([MaLoai], [TenLoai]) VALUES (4,N'Cà phê')
 INSERT [LoaiNuoc] ([MaLoai], [TenLoai]) VALUES (5,N'Nước ngọt')
+
+SET IDENTITY_INSERT [NuocUong] off
+SET IDENTITY_INSERT [ChiTietHoaDon] ON
+INSERT [ChiTietHoaDon] ([MaChiTietHoaDon], [MaHoaDon], [MaNuocUong], [SoLuong]) VALUES (1, 1, 12, 10)
+INSERT [ChiTietHoaDon] ([MaChiTietHoaDon], [MaHoaDon], [MaNuocUong], [SoLuong]) VALUES (2, 4, 1, 10)
+INSERT [ChiTietHoaDon] ([MaChiTietHoaDon], [MaHoaDon], [MaNuocUong], [SoLuong]) VALUES (3, 6, 5, 20)
 
 SET IDENTITY_INSERT [LoaiNuoc] OFF
 SET IDENTITY_INSERT [NuocUong] ON 
@@ -139,18 +143,13 @@ INSERT [NuocUong] ([MaNuocUong], [TenNuocUong], [MaLoai], [DonGia], [DonViTinh])
 INSERT [NuocUong] ([MaNuocUong], [TenNuocUong], [MaLoai], [DonGia], [DonViTinh]) VALUES (12, N'Bò húc',							5, 15000, N'Lon')
 INSERT [NuocUong] ([MaNuocUong], [TenNuocUong], [MaLoai], [DonGia], [DonViTinh]) VALUES (13, N'Coca-cola',						5, 10000, N'Chai')
 
-SET IDENTITY_INSERT [NuocUong] OFF
-SET IDENTITY_INSERT [ChiTietHoaDon] ON
-INSERT [ChiTietHoaDon] ([MaChiTietHoaDon], [MaHoaDon], [MaNuocUong], [SoLuong]) VALUES (1, 1, 12, 10)
-INSERT [ChiTietHoaDon] ([MaChiTietHoaDon], [MaHoaDon], [MaNuocUong], [SoLuong]) VALUES (2, 4, 1, 10)
-INSERT [ChiTietHoaDon] ([MaChiTietHoaDon], [MaHoaDon], [MaNuocUong], [SoLuong]) VALUES (3, 6, 5, 20)
-
-
-
-
 
 -- thực hiện truy vấn và procedure
 -----------------------------------------
+--thủ tục lấy bảng tài khoản 
+Create procedure [dbo].[TaiKhoan_GetAll]
+as
+	select * from TaiKhoan
 -- thủ tục lấy bảng NuocUong
 Create procedure [dbo].[NuocUong_GetAll]
 as
@@ -161,10 +160,6 @@ Create procedure [dbo].[LoaiNuoc_GetAll]
 as
 	select * from LoaiNuoc
 -----------------------------------------
--- Thủ tục lấy dữ liệu từ bảng Ban
-CREATE PROCEDURE [Table_GetAll]
-AS
-	SELECT * FROM Ban
 -- thủ tục thêm, xoá, sửa bảng LoaiNuoc
 create PROCEDURE [dbo].[LoaiNuoc_InsertUpdateDelete]
  @MaLoai int output,
@@ -233,7 +228,44 @@ create procedure [dbo].[NuocUong_TimTheoTen]
 As
 	Begin
 		select * from NuocUong where TenNuocUong = '%' + @TenNuocUong + '%'
-	End
+	End       
 
+-----------------------------------------
+-- thủ tục lấy bảng NhanVien
+Create procedure [dbo].[NhanVien_GetAll]
+as
+	select * from NhanVien
 
-SELECT MaHoaDon From [HoaDon] WHERE MaBan = 3 and TrangThaiHD = 1
+-----------------------------------------
+-- Thêm xoá sửa bảng NhanVien
+create PROCEDURE [dbo].[NhanVien_InsertUpdate]
+ @MaNV nvarchar(20),
+ @HoTen nvarchar(100),
+ @DiaChi nvarchar(50),
+ @GioiTinh nvarchar(10),
+ @NgaySinh datetime,
+ @SoDienThoai nvarchar(100),
+ @TenTaiKhoan nvarchar(100),
+ @Action int
+as
+if @Action = 0
+	begin
+		if not exists (select * from NhanVien where HoTen = @HoTen)
+		begin
+			insert into [NhanVien] ([MaNV], [HoTen], [DiaChi], [GioiTinh], [NgaySinh], [SoDienThoai], [TenTaiKhoan])
+			values(@MaNV, @HoTen, @DiaChi, @GioiTinh, @NgaySinh, @SoDienThoai, @TenTaiKhoan)
+			
+		end
+	end
+else if @Action = 1
+	begin
+		update [NhanVien]
+		set [MaNV] = @MaNV,
+			[HoTen] = @HoTen,
+			[DiaChi] = @DiaChi,
+			[GioiTinh] = @GioiTinh,
+			[NgaySinh] = NgaySinh,
+			[SoDienThoai] = @SoDienThoai,
+			[TenTaiKhoan] = @TenTaiKhoan
+		where [MaNV] = @MaNV
+	end

@@ -39,8 +39,11 @@ namespace Quản_lý_quán_trà_sữa
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtTenNuocUong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDongYLoai = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemLoai = new Guna.UI2.WinForms.Guna2Button();
             this.cbbLoaiNuoc = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xoáLoạiNướcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtThemLoai = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDVT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
@@ -56,13 +59,10 @@ namespace Quản_lý_quán_trà_sữa
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDongYLoai = new Guna.UI2.WinForms.Guna2Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.xoáLoạiNướcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel3
@@ -176,6 +176,31 @@ namespace Quản_lý_quán_trà_sữa
             this.guna2Panel2.Size = new System.Drawing.Size(1503, 251);
             this.guna2Panel2.TabIndex = 3;
             // 
+            // btnDongYLoai
+            // 
+            this.btnDongYLoai.BorderRadius = 10;
+            this.btnDongYLoai.CheckedState.Parent = this.btnDongYLoai;
+            this.btnDongYLoai.CustomImages.Parent = this.btnDongYLoai;
+            this.btnDongYLoai.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDongYLoai.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDongYLoai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDongYLoai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDongYLoai.DisabledState.Parent = this.btnDongYLoai;
+            this.btnDongYLoai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
+            this.btnDongYLoai.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDongYLoai.ForeColor = System.Drawing.Color.White;
+            this.btnDongYLoai.HoverState.Parent = this.btnDongYLoai;
+            this.btnDongYLoai.Image = global::Quản_lý_quán_trà_sữa.Properties.Resources.check;
+            this.btnDongYLoai.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnDongYLoai.Location = new System.Drawing.Point(922, 160);
+            this.btnDongYLoai.Name = "btnDongYLoai";
+            this.btnDongYLoai.ShadowDecoration.Parent = this.btnDongYLoai;
+            this.btnDongYLoai.Size = new System.Drawing.Size(128, 45);
+            this.btnDongYLoai.TabIndex = 6;
+            this.btnDongYLoai.Text = "Đồng ý";
+            this.btnDongYLoai.Visible = false;
+            this.btnDongYLoai.Click += new System.EventHandler(this.btnDongYLoai_Click);
+            // 
             // btnThemLoai
             // 
             this.btnThemLoai.BorderRadius = 10;
@@ -222,6 +247,20 @@ namespace Quản_lý_quán_trà_sữa
             this.cbbLoaiNuoc.ShadowDecoration.Parent = this.cbbLoaiNuoc;
             this.cbbLoaiNuoc.Size = new System.Drawing.Size(306, 36);
             this.cbbLoaiNuoc.TabIndex = 5;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xoáLoạiNướcToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 28);
+            // 
+            // xoáLoạiNướcToolStripMenuItem
+            // 
+            this.xoáLoạiNướcToolStripMenuItem.Name = "xoáLoạiNướcToolStripMenuItem";
+            this.xoáLoạiNướcToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.xoáLoạiNướcToolStripMenuItem.Text = "Xoá loại nước";
             // 
             // txtThemLoai
             // 
@@ -514,45 +553,6 @@ namespace Quản_lý_quán_trà_sữa
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnDongYLoai
-            // 
-            this.btnDongYLoai.BorderRadius = 10;
-            this.btnDongYLoai.CheckedState.Parent = this.btnDongYLoai;
-            this.btnDongYLoai.CustomImages.Parent = this.btnDongYLoai;
-            this.btnDongYLoai.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDongYLoai.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDongYLoai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDongYLoai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDongYLoai.DisabledState.Parent = this.btnDongYLoai;
-            this.btnDongYLoai.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(20)))), ((int)(((byte)(137)))));
-            this.btnDongYLoai.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDongYLoai.ForeColor = System.Drawing.Color.White;
-            this.btnDongYLoai.HoverState.Parent = this.btnDongYLoai;
-            this.btnDongYLoai.Image = global::Quản_lý_quán_trà_sữa.Properties.Resources.check;
-            this.btnDongYLoai.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDongYLoai.Location = new System.Drawing.Point(922, 160);
-            this.btnDongYLoai.Name = "btnDongYLoai";
-            this.btnDongYLoai.ShadowDecoration.Parent = this.btnDongYLoai;
-            this.btnDongYLoai.Size = new System.Drawing.Size(128, 45);
-            this.btnDongYLoai.TabIndex = 6;
-            this.btnDongYLoai.Text = "Đồng ý";
-            this.btnDongYLoai.Visible = false;
-            this.btnDongYLoai.Click += new System.EventHandler(this.btnDongYLoai_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xoáLoạiNướcToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 28);
-            // 
-            // xoáLoạiNướcToolStripMenuItem
-            // 
-            this.xoáLoạiNướcToolStripMenuItem.Name = "xoáLoạiNướcToolStripMenuItem";
-            this.xoáLoạiNướcToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
-            this.xoáLoạiNướcToolStripMenuItem.Text = "Xoá loại nước";
-            // 
             // frmQuanLyMonAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -569,8 +569,8 @@ namespace Quản_lý_quán_trà_sữa
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.guna2Panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
