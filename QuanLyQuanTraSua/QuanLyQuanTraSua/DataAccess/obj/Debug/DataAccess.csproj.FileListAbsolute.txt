@@ -6,3 +6,10 @@ D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.pd
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\Guna.UI2.dll
 D:\file new\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.AssemblyReference.cache
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.dll
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\obj\Debug\DataAccess.pdb
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\DataAccess.dll
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\DataAccess.pdb
+D:\IT-STUDY\LT-CSDL\DoAn-QuanLyTraSua\QuanLyQuanTraSua\QuanLyQuanTraSua\DataAccess\bin\Debug\Guna.UI2.dll
